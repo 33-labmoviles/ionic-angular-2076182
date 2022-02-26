@@ -14,4 +14,30 @@
   </ion-header>
 
   <app-explore-container name="Tab 1 page"></app-explore-container>
+
+  <ion-grid>
+    <ion-row *ngFor="let alumno of Alumnos">
+      <ion-col>
+        <ion-card>
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <p>Nombre: {{alumno.Nombre}}</p>
+                  <p>Apellido: {{alumno.Apellido}}</p>
+                  <p>Matricula: {{alumno.Matricula}}</p>
+
+                </ion-col>
+                <ion-col class="Alinear">
+                  <img src="assets/imagenes/12.png" alt="" width="100">
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
 </ion-content>
