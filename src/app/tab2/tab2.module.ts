@@ -8,11 +8,14 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab2PageRoutingModule } from './tab2-routing.module';
 
+import { ListaComponentModule } from '../lista/lista.component.module';
+
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
+    ListaComponentModule,
     ExploreContainerComponentModule,
     Tab2PageRoutingModule
   ],

@@ -72,6 +72,7 @@ var AgregarAlum: any={
 }
   
   this.Alumnos.push(AgregarAlum);
+  
   this.Alumnos.sort(function(a,b){
     var nama = a.Nombre.toUpperCase();
     var namb  =b.Nombre.toUpperCase();
