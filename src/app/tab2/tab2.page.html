@@ -15,10 +15,27 @@
 
   <ion-content>
     <ion-list>
-      <ion-item *ngFor="let alumno of Alumnos" [routerLink]="['/lista-detalles',alumno.Matricula]">
-        <ion-img src="assets/imagenes/12.png" alt="" width="30" height="30"></ion-img>
-        <ion-label>{{alumno.Nombre}}</ion-label>
-      </ion-item>
+      <ion-item-sliding *ngFor="let alumno of Alumnos">
+
+
+
+        <ion-item-options side="start" >
+          
+          <ion-item-option (click)="favorite(item)" color="success"> <ion-icon slot="icon-only" name="heart"></ion-icon> </ion-item-option>
+        </ion-item-options>
+
+        <ion-item [routerLink]="['/lista-detalles',alumno.Matricula]">
+          <ion-img src="assets/imagenes/12.png" alt="" width="30" height="30"></ion-img>
+          <ion-label>{{alumno.Nombre}}</ion-label>
+        </ion-item>
+
+
+        <ion-item-options side="end">
+          <ion-item-option (click)="unread(item)" color="danger"> <ion-icon slot="icon-only" name="trash"></ion-icon> </ion-item-option>
+        </ion-item-options>
+
+
+      </ion-item-sliding>
     </ion-list>
   </ion-content>
 
