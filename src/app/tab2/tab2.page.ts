@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component,OnInit } from '@angular/core';
+import {HttpClient} from '@angular/common/http'
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -7,56 +7,17 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  Alumnos=[
-    {Nombre: "Abraham ",
-    Apellido:"Ramirez",
-    Matricula:"123456"
-    },
-    {
-    Nombre:"Brian",
-    Apellido:"Esquivel",
-    Matricula:"123456"
-    },
-    {
-    Nombre:"Diego",
-    Apellido:"Davila",
-    Matricula:"2348932"
-    },
-    {
-    Nombre:"Diego",
-    Apellido:"Jasso",
-    Matricula:""
-    },
-    {
-    Nombre:"Julio",
-    Apellido:"Manuel",
-    Matricula:"1092744"
-    },
-    {
-    Nombre:"Luis",
-    Apellido:"Armando villanuevas",
-    Matricula:"984892342"
-    },
-    {
-    Nombre: "Luis",
-    Apellido:"Otiniel Tamez",
-    Matricula:"328498324"
-    },
-    {
-    Nombre: "Rogel ",
-    Apellido:"Axel",
-    Matricula:"12342134"
-    },
-    {
-    Nombre:"Luis ",
-    Apellido:"Armando",
-    Matricula:"1234213"
-    },
-    {
-    Nombre:"Ricardo ",
-    Apellido:"Rocha",
-    Matricula:"21341234"
-    }];
+  ngOnInit(): void{
+    this.getAlumnos();
+  }
+  alumnos : any=[];
+
+  getAlumnos(){
+    return this.http.get('https://base-56702-default-rtdb.firebaseio.com/alumnos.json').subscribe(res=>
+      this.alumnos = res
+    )}
+   //console.log(res);
+  
 }

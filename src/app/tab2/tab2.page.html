@@ -15,7 +15,7 @@
 
   <ion-content>
     <ion-list>
-      <ion-item-sliding *ngFor="let alumno of Alumnos">
+      <ion-item-sliding *ngFor="let alumno of alumnos">
 
 
 
@@ -26,7 +26,7 @@
 
         <ion-item [routerLink]="['/lista-detalles',alumno.Matricula]">
           <ion-img src="assets/imagenes/12.png" alt="" width="30" height="30"></ion-img>
-          <ion-label>{{alumno.Nombre}}</ion-label>
+          <ion-label>{{alumno.nombre}}</ion-label>
         </ion-item>
 
 
