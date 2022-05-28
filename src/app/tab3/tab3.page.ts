@@ -1,30 +1,40 @@
-import { Component, Input } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+/* eslint-disable @typescript-eslint/member-ordering */
 import { NgForm } from '@angular/forms';
+import { Component, Input , Output, EventEmitter, OnChanges, OnInit} from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Database, set, ref, update, getDatabase } from 'firebase/database';
 
 @Component({
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
-export class Tab3Page {
+export class Tab3Page implements OnInit {
 
-  constructor(private http: HttpClient) {}
-  nombre: String="";
-  apellido: String="";
-  matricula: String="";
+  constructor() {}
 
-  ngOnInit(): void{
-    this.getAlumnos();
+  ngOnInit(): void {
   }
-  alumnos : any=[];
+  onSubmit(agregarAlumno: NgForm){
+    const db = getDatabase();
+    set(ref(db, 'alumnos/'+ this.matricula),{
+      nombre: this.nombre,
+      apellido: this.apellido,
+      matricula: this.matricula
+    });
+    window.location.reload();
+    this.clear();
+  }
 
-  getAlumnos(){
-    return this.http.get('https://base-56702-default-rtdb.firebaseio.com/alumnos.json').subscribe(res=>
-      this.alumnos = res
-    )}
+  @Input() nombre = '';
+  @Input() apellido = '';
+  @Input() matricula = '';
 
-onSubmit(AgregarA: NgForm){
-console.log("submit")
-}
+    nuevoAlumno: any = {};
+
+    clear(){
+      this.nombre = '';
+      this.apellido = '';
+      this.matricula = '';
+    }
 }

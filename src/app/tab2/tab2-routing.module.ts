@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListaDetallesComponent } from '../lista-detalles/lista-detalles.component';
+import { AlumnoDetalleComponent } from '../alumno-detalle/alumno-detalle.component';
 import { Tab2Page } from './tab2.page';
 
 const routes: Routes = [
@@ -9,8 +9,8 @@ const routes: Routes = [
     component: Tab2Page,
   },
   {
-    path: 'lista-detalle',
-    component: ListaDetallesComponent
+    path:'alumno-detalle',
+    component: AlumnoDetalleComponent
   }
 ];
 

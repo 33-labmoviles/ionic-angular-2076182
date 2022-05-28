@@ -1,17 +1,19 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { ListaDetallesComponent } from './lista-detalles/lista-detalles.component';
+import { AlumnoDetalleComponent } from './alumno-detalle/alumno-detalle.component';
 
 const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  },{
-    path: 'lista-detalles',
-    component: ListaDetallesComponent
-  },{
-    path: 'lista-detalles/:id',
-    component: ListaDetallesComponent
+  },
+  {
+    path: 'alumno-detalle',
+    component: AlumnoDetalleComponent
+  },
+  {
+    path: 'alumno-detalle/:id',
+    component: AlumnoDetalleComponent
   }
 ];
 @NgModule({

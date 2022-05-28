@@ -1,7 +1,8 @@
+
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Agregar alumnos
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,38 +13,37 @@
       <ion-title size="large">Tab 3</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
-<form #AgregarA="ngForm" (ngSubmit) = "onSubmit(AgregarA)">
-  <ion-grid>
-    <ion-row>
-      <ion-col size="3">
-        Nombre:
-      </ion-col>
-      <ion-col size="9">
-        <ion-input placeholder="Panchito" [(ngModel)]="nombre" name="nombre" class="borde">
-          </ion-input>
-      </ion-col>
-      <ion-col size="3">
-        Apellido:
-      </ion-col>
-      <ion-col size="9">
-        <ion-input placeholder="Rodriguez"[(ngModel)]="apellido" name="apellido" class="borde">
-          </ion-input>
-      </ion-col>
-      <ion-col size="3">
-        Matricula:
-      </ion-col>
-      <ion-col size="9">
-        <ion-input placeholder="1234" [(ngModel)]="matricula" name="matricula" class="borde">
-          </ion-input>
-      </ion-col>
-      <ion-col size="3">
-        <ion-button type="submit">Agregar Alumno</ion-button>
-      </ion-col>
-
-    </ion-row>
-
-  </ion-grid>
-</form>
+  <form #agregarAlumno = "ngForm" (ngSubmit) = "onSubmit(agregarAlumno)">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="2">
+          Nombre:
+        </ion-col>
+        <ion-col size="10">
+          <ion-input placeholder="Ingresa Tu nombre" [(ngModel)]="nombre" name="nombre" > {{nombre.nombre}}</ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="2">
+         Apellido:
+        </ion-col>
+        <ion-col size="10">
+          <ion-input placeholder="Ingresa tu apellido" [(ngModel)]="apellido" name="apellido" > {{apellido.apellido}}</ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="2">
+          Matrícula:
+        </ion-col>
+        <ion-col size="10">
+          <ion-input placeholder="Ingresa tu matricula" [(ngModel)]="matricula" name="matricula" > {{matricula.matricula}}</ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button type = "Submit">Agregar Alumno</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>
